@@ -14,14 +14,14 @@ const FrontSheet({ Key? key }) : super(key: key);
         height: 150.0,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(30.0),
-          color: Colors.grey[900]
+          color: Theme.of(context).primaryColorDark
           ),
         )  
       )
     );
 
     return Container(
-      decoration: Constants.sheetBoxDecoration(Theme.of(context).primaryColorLight),
+      decoration: Constants.sheetBoxDecoration(Theme.of(context).scaffoldBackgroundColor),
       child: ListView(
         shrinkWrap: true,
         physics: const NeverScrollableScrollPhysics(),

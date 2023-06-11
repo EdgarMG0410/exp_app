@@ -1,8 +1,16 @@
 import 'package:exp_app/pages/home_page.dart';
+import 'package:exp_app/providers/ui_provider.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MultiProvider(
+    providers: [
+      ChangeNotifierProvider(create: (_) => UIProvider())
+    ],
+    child: 
+    const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {
@@ -16,7 +24,11 @@ class MyApp extends StatelessWidget {
         appBarTheme: AppBarTheme(
           backgroundColor: Colors.grey[900]
         ),
-        scaffoldBackgroundColor: Colors.grey[900]
+        bottomNavigationBarTheme: const BottomNavigationBarThemeData(
+          selectedItemColor: Colors.green
+        ),
+        scaffoldBackgroundColor: Colors.grey[900],
+        primaryColorDark: Colors.grey[850],
       ),
       initialRoute: 'home',
       routes: {
@@ -24,4 +36,4 @@ class MyApp extends StatelessWidget {
       }, 
     );
   }
-}
+} 

@@ -52,7 +52,9 @@ class _BalancePageState extends State<BalancePage> {
               children: [
                 Text(
                   '\$ 2,500.00',
-                  style: TextStyle(fontSize: 30.0),
+                  style: TextStyle(
+                    fontSize: 30.0,
+                    color: Colors.green),
                   ),
                 Text(
                   'Balance',

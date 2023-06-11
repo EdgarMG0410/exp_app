@@ -7,17 +7,16 @@ const BackSheet({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context){
     // ignore: no_leading_underscores_for_local_identifiers
-    _headers(String name, String amount){
+    _headers(String name, String amount, Color color){
       return Column(
         children: [
           Padding(
             padding: const EdgeInsets.only(top: 13.0, bottom: 5.0),
             child: Text(
               name,
-              style: TextStyle(
+              style: const TextStyle(
                 fontSize: 18.0,
-                letterSpacing: 1.5,
-                color: Theme.of(context).cardColor
+                letterSpacing: 1.5
               )
             )
           ),
@@ -26,7 +25,7 @@ const BackSheet({ Key? key }) : super(key: key);
             style: TextStyle(
               fontSize: 20.0,
               letterSpacing: 1.5,
-              color: Theme.of(context).cardColor
+              color: color
             ),
             )
         ],
@@ -38,11 +37,11 @@ const BackSheet({ Key? key }) : super(key: key);
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceEvenly,
         children: [
-          _headers('Ingresos', '\$ 3,500.00'),
+          _headers('Ingresos', '\$ 3,500.00', Colors.green),
           const VerticalDivider(
             thickness: 2.0,
           ),
-          _headers('Gastos', '\$ 1,500.00')
+          _headers('Gastos', '\$ 1,500.00', Colors.red)
         ],
       ),
     );
